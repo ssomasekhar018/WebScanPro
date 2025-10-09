@@ -1,0 +1,9 @@
+input_length,num_special_chars,num_digits,contains_sql_keyword,contains_html_tag,url_encoded,parameter_encoded,param_type_encoded
+0.0,0.0,0.0,0,0,0,3,3
+0.0,0.0,0.0,0,0,0,1,1
+0.06896551724137932,0.0,0.0,0,0,0,0,2
+1.0,0.0,0.9090909090909092,0,0,0,2,0
+0.0,0.0,0.0,0,0,0,3,3
+0.0,0.0,0.0,0,0,0,1,1
+0.06896551724137932,0.0,0.0,0,0,0,0,2
+1.0,0.0,1.0,0,0,0,2,0

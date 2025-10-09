@@ -1,0 +1,2 @@
+## Data Preprocessing Milestone
+The `data_preprocessing.ipynb` notebook loads `features_extracted.csv`, handles missing values (numerical with median, categorical with mode), encodes categorical columns (`url`, `parameter`, `param_type`) using Label Encoding, and normalizes numerical columns (`input_length`, `num_special_chars`, `num_digits`) using MinMaxScaler. The cleaned dataset is saved as `cleaned_dataset.csv`. Additional visualizations of the preprocessed data (normalized input_length histogram and encoded param_type bar plot) are saved in `outputs/reports/`.

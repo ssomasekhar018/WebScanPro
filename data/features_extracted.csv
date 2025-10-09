@@ -1,0 +1,9 @@
+url,parameter,input_value,input_length,num_special_chars,num_digits,param_type,contains_sql_keyword,contains_html_tag
+http://localhost:8080/login.php,username,,3,0,0,text,0,0
+http://localhost:8080/login.php,password,,3,0,0,password,0,0
+http://localhost:8080/login.php,Login,Login,5,0,0,submit,0,0
+http://localhost:8080/login.php,user_token,1da6e93560384bc52ca35601fc7e4ff4,32,0,20,hidden,0,0
+http://localhost:8080/login.php,username,,3,0,0,text,0,0
+http://localhost:8080/login.php,password,,3,0,0,password,0,0
+http://localhost:8080/login.php,Login,Login,5,0,0,submit,0,0
+http://localhost:8080/login.php,user_token,86e17d6d05591b46f932239f28aeb70c,32,0,22,hidden,0,0
