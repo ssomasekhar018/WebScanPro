@@ -1,0 +1,66 @@
+[
+  {
+    "url": "http://localhost:8080/login.php",
+    "method": "POST",
+    "param_name": "username",
+    "input_type": "text",
+    "default_value": "",
+    "form_action": "login.php"
+  },
+  {
+    "url": "http://localhost:8080/login.php",
+    "method": "POST",
+    "param_name": "password",
+    "input_type": "password",
+    "default_value": "",
+    "form_action": "login.php"
+  },
+  {
+    "url": "http://localhost:8080/login.php",
+    "method": "POST",
+    "param_name": "Login",
+    "input_type": "submit",
+    "default_value": "Login",
+    "form_action": "login.php"
+  },
+  {
+    "url": "http://localhost:8080/login.php",
+    "method": "POST",
+    "param_name": "user_token",
+    "input_type": "hidden",
+    "default_value": "1da6e93560384bc52ca35601fc7e4ff4",
+    "form_action": "login.php"
+  },
+  {
+    "url": "http://localhost:8080/login.php",
+    "method": "POST",
+    "param_name": "username",
+    "input_type": "text",
+    "default_value": "",
+    "form_action": "login.php"
+  },
+  {
+    "url": "http://localhost:8080/login.php",
+    "method": "POST",
+    "param_name": "password",
+    "input_type": "password",
+    "default_value": "",
+    "form_action": "login.php"
+  },
+  {
+    "url": "http://localhost:8080/login.php",
+    "method": "POST",
+    "param_name": "Login",
+    "input_type": "submit",
+    "default_value": "Login",
+    "form_action": "login.php"
+  },
+  {
+    "url": "http://localhost:8080/login.php",
+    "method": "POST",
+    "param_name": "user_token",
+    "input_type": "hidden",
+    "default_value": "86e17d6d05591b46f932239f28aeb70c",
+    "form_action": "login.php"
+  }
+]
