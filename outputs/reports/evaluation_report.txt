@@ -1,0 +1,4 @@
+No ground-truth labels available.
+Isolation Forest: 12.50% anomalies detected
+One-Class SVM: 50.00% anomalies detected
+Overlap in anomaly predictions: 37.50%
