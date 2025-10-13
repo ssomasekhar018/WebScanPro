@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-## Data Preprocessing Milestone
-The `data_preprocessing.ipynb` notebook loads `features_extracted.csv`, handles missing values (numerical with median, categorical with mode), encodes categorical columns (`url`, `parameter`, `param_type`) using Label Encoding, and normalizes numerical columns (`input_length`, `num_special_chars`, `num_digits`) using MinMaxScaler. The cleaned dataset is saved as `cleaned_dataset.csv`. Additional visualizations of the preprocessed data (normalized input_length histogram and encoded param_type bar plot) are saved in `outputs/reports/`.
-=======
 ## 🔍 Project Overview
 
 **WebScanPro** is an automated security testing tool for web applications, to be developed primarily **in Python 3.x** and augmented with **Machine Learning (ML) / Deep Learning (DL)** techniques where appropriate. The tool will identify common vulnerabilities such as **SQL Injection**, **Cross-Site Scripting (XSS)**, **Broken Authentication**, **Insecure Direct Object References (IDOR)**, and more. ML/DL components will be used for tasks like anomaly detection, automated classification of server responses, and reducing false positives.
@@ -28,4 +24,3 @@ The `data_preprocessing.ipynb` notebook loads `features_extracted.csv`, handles 
 - **Data tooling:** pandas, numpy, joblib (model persistence)
 - **Deployment/target platforms:** Docker
 - **Target apps for testing:** DVWA
->>>>>>> 4e1abe91dd24ecbfaf3f07fe780f245a070aa40e
