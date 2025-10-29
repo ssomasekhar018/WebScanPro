@@ -1,0 +1,5 @@
+payload_id,payload,context_hint,expected_behavior
+R001,"<script>alert(1)</script>","name","reflected in greeting"
+R002,"<img src=x onerror=alert(1)>","name","event handler"
+B001,"john","name","normal name"
+B002,"hello","name","safe text"
