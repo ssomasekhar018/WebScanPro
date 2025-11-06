@@ -1,0 +1,77 @@
+{
+  "scan_summary": {
+    "total_urls": 4,
+    "xss_detected": 0,
+    "sqli_detected": 0,
+    "high_risk_urls": 0,
+    "medium_risk_urls": 0,
+    "low_risk_urls": 4,
+    "timestamp": "2025-10-29T18:13:49.505357"
+  },
+  "scan_results": [
+    {
+      "url": "https://example.com",
+      "timestamp": "2025-10-29T18:10:40.336167",
+      "xss": {
+        "is_vulnerable": false,
+        "probability": 0.2757324758742925,
+        "payloads_tested": 20,
+        "vulnerable_payloads": []
+      },
+      "sqli": {
+        "is_vulnerable": false,
+        "probability": 0.0,
+        "payloads_tested": 25,
+        "vulnerable_payloads": []
+      }
+    },
+    {
+      "url": "https://public-firing-range.appspot.com/reflected/parameter/body?q=test",
+      "timestamp": "2025-10-29T18:11:22.590991",
+      "xss": {
+        "is_vulnerable": false,
+        "probability": 0.29707214129378956,
+        "payloads_tested": 20,
+        "vulnerable_payloads": []
+      },
+      "sqli": {
+        "is_vulnerable": false,
+        "probability": 0.0,
+        "payloads_tested": 25,
+        "vulnerable_payloads": []
+      }
+    },
+    {
+      "url": "https://public-firing-range.appspot.com/reflected/parameter/title?q=test",
+      "timestamp": "2025-10-29T18:11:58.622408",
+      "xss": {
+        "is_vulnerable": false,
+        "probability": 0.29812428156186443,
+        "payloads_tested": 20,
+        "vulnerable_payloads": []
+      },
+      "sqli": {
+        "is_vulnerable": false,
+        "probability": 0.0,
+        "payloads_tested": 25,
+        "vulnerable_payloads": []
+      }
+    },
+    {
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+      "timestamp": "2025-10-29T18:12:38.474420",
+      "xss": {
+        "is_vulnerable": false,
+        "probability": 0.0,
+        "payloads_tested": 20,
+        "vulnerable_payloads": []
+      },
+      "sqli": {
+        "is_vulnerable": false,
+        "probability": 0.0,
+        "payloads_tested": 25,
+        "vulnerable_payloads": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "test_timestamp": "2025-11-05T22:18:31.284060",
+  "flask_test": {
+    "success": true,
+    "latency_ms": 220.39151191711426,
+    "result": {
+      "autoencoder_error": 4.040379895138302,
+      "final_label": "anomalous",
+      "iforest_score": 0.12059403488277631,
+      "session_id": "test_session_001"
+    }
+  },
+  "fastapi_test": {
+    "success": false,
+    "latency_ms": 0,
+    "result": null
+  },
+  "performance_summary": {
+    "total_tests": 20,
+    "successful_tests": "0",
+    "failed_tests": "20",
+    "avg_latency_ms": 215.8846616744995,
+    "min_latency_ms": 160.1111888885498,
+    "max_latency_ms": 252.68268585205078,
+    "std_latency_ms": 27.242234356020795
+  },
+  "latency_requirements": {
+    "max_allowed_latency_ms": 150,
+    "tests_within_limit": "0",
+    "tests_exceeding_limit": "20",
+    "compliance_percentage": 0.0
+  }
+}

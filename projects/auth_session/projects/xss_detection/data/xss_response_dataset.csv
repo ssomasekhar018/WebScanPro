@@ -1,0 +1,9 @@
+payload_id,url,method,injection_point,payload,response_time,status_group,html_content_length,reflected_payload_present,script_executed_flag,error_message_flag,is_malicious,notes
+R001,http://localhost:3000/vulnerabilities/xss_r/?name=%3Cscript%3Ealert%281%29%3C%2Fscript%3E&user_token=abcd1234,GET,q,"<script>alert(1)</script>",0.245,2xx,3542,1,0,0,1,snapshot: snapshot_20251029_091816_R1.html
+R002,http://localhost:3000/vulnerabilities/xss_r/?name=%3Cimg+src%3Dx+onerror%3Dalert%281%29%3E&user_token=abcd1234,GET,q,"<img src=x onerror=alert(1)>",0.187,2xx,3589,1,0,0,1,snapshot: snapshot_20251029_091816_R2.html
+B001,http://localhost:3000/vulnerabilities/xss_r/?name=john&user_token=abcd1234,GET,q,"john",0.156,2xx,3498,1,0,0,0,snapshot: snapshot_20251029_091816_R3.html
+B002,http://localhost:3000/vulnerabilities/xss_r/?name=hello&user_token=abcd1234,GET,q,"hello",0.142,2xx,3499,1,0,0,0,snapshot: snapshot_20251029_091816_R4.html
+S001,http://localhost:3000/vulnerabilities/xss_s/,GET (after POST),"comment","<script>alert(1)</script>",0.198,2xx,4267,1,0,0,1,insert_status=200; snapshot: snapshot_20251029_091816_S1.html
+S002,http://localhost:3000/vulnerabilities/xss_s/,GET (after POST),"comment","<img src=x onerror=alert(1)>",0.176,2xx,4289,1,0,0,1,insert_status=200; snapshot: snapshot_20251029_091816_S2.html
+B101,http://localhost:3000/vulnerabilities/xss_s/,GET (after POST),"comment","Great!",0.145,2xx,4250,1,0,0,0,insert_status=200; snapshot: snapshot_20251029_091816_S3.html
+B102,http://localhost:3000/vulnerabilities/xss_s/,GET (after POST),"comment","Thanks",0.139,2xx,4249,1,0,0,0,insert_status=200; snapshot: snapshot_20251029_091816_S4.html

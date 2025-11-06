@@ -1,0 +1,20 @@
+{
+    "data_path": "../data/xss_response_dataset.csv",
+    "model_type": "lstm",
+    "embedding_dim": 128,
+    "hidden_dim": 128,
+    "num_filters": 128,
+    "filter_sizes": [
+        3,
+        4,
+        5
+    ],
+    "num_layers": 2,
+    "dropout": 0.3,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "patience": 5,
+    "random_seed": 42,
+    "max_seq_length": 1000
+}
