@@ -44,8 +44,19 @@ class SQLiDetector:
     def prepare_features(self, request, response):
         """Extract and prepare features for SQLi detection."""
         try:
-            features_dict = extract_features(request, response)
-            features_df = pd.DataFrame([features_dict])
+            # Create a DataFrame from the request and response data
+            data = {
+                'url': [request.get('url', '')],
+                'payload': [request.get('payload', '')],
+                'response_time': [response.get('response_time', 0)],
+                'status_code': [response.get('status_code', 0)],
+                'html_len': [len(response.get('text', ''))],
+                'error_flag': [1 if 'error' in response.get('text', '').lower() else 0],
+                'reflected_flag': [1 if request.get('payload', '') in response.get('text', '') else 0]
+            }
+            df = pd.DataFrame(data)
+
+            features_df = extract_features(df)
             
             if self.vectorizer:
                 features_df = self.vectorizer.transform(features_df)
