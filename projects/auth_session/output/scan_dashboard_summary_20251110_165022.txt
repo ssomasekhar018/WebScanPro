@@ -1,0 +1,22 @@
+=== IDOR SCAN DASHBOARD ===
+Generated: 2025-11-10 16:50:22
+Total Tests: 32
+Applications Tested: 3
+
+DVWA:
+  Total Tests: 8
+  Normal: 8 (100.0%)
+  Anomalous: 0 (0.0%)
+  Avg Confidence: 0.500
+
+Juice_Shop:
+  Total Tests: 8
+  Normal: 8 (100.0%)
+  Anomalous: 0 (0.0%)
+  Avg Confidence: 0.500
+
+Mock_Server:
+  Total Tests: 16
+  Normal: 16 (100.0%)
+  Anomalous: 0 (0.0%)
+  Avg Confidence: 0.500

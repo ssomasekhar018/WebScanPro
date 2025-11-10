@@ -1,0 +1,17 @@
+application,test_type,user_id,target_id,original_user,url,status_code,response_length,ml_prediction,ml_probability,ml_label,timestamp
+DVWA,profile_access,admin,1,admin,http://localhost/vulnerabilities/brute/?user_id=1,200,1523,0,0.5,normal,2025-11-10T16:46:41.934001
+DVWA,profile_access,admin,2,admin,http://localhost/vulnerabilities/brute/?user_id=2,200,1523,0,0.5,normal,2025-11-10T16:46:42.463740
+DVWA,profile_access,admin,1,user,http://localhost/vulnerabilities/brute/?user_id=1,200,1523,0,0.5,normal,2025-11-10T16:46:42.992356
+DVWA,profile_access,admin,2,user,http://localhost/vulnerabilities/brute/?user_id=2,200,1523,0,0.5,normal,2025-11-10T16:46:43.519803
+Juice_Shop,api_user_access,demo@demo.com,1,demo@demo.com,http://localhost:3000/rest/user/1,500,3033,0,0.5,normal,2025-11-10T16:46:44.105114
+Juice_Shop,api_user_access,demo@demo.com,2,demo@demo.com,http://localhost:3000/rest/user/2,500,3033,0,0.5,normal,2025-11-10T16:46:44.673703
+Juice_Shop,api_user_access,demo@demo.com,1,admin@juice-sh.op,http://localhost:3000/rest/user/1,500,3033,0,0.5,normal,2025-11-10T16:46:45.235026
+Juice_Shop,api_user_access,demo@demo.com,2,admin@juice-sh.op,http://localhost:3000/rest/user/2,500,3033,0,0.5,normal,2025-11-10T16:46:45.774267
+Mock_Server,profile_access,user_a,101,user_a,http://localhost:5000/user/profile?id=101,200,66,0,0.5,normal,2025-11-10T16:46:48.350050
+Mock_Server,profile_access,user_a,102,user_a,http://localhost:5000/user/profile?id=102,200,66,0,0.5,normal,2025-11-10T16:46:50.912315
+Mock_Server,profile_access,user_a,201,user_b,http://localhost:5000/user/profile?id=201,200,66,0,0.5,normal,2025-11-10T16:46:53.465611
+Mock_Server,profile_access,user_a,202,user_b,http://localhost:5000/user/profile?id=202,200,66,0,0.5,normal,2025-11-10T16:46:56.013722
+Mock_Server,profile_access,user_b,201,user_b,http://localhost:5000/user/profile?id=201,200,66,0,0.5,normal,2025-11-10T16:46:58.570381
+Mock_Server,profile_access,user_b,202,user_b,http://localhost:5000/user/profile?id=202,200,66,0,0.5,normal,2025-11-10T16:47:01.139585
+Mock_Server,profile_access,user_b,101,user_a,http://localhost:5000/user/profile?id=101,200,66,0,0.5,normal,2025-11-10T16:47:03.720101
+Mock_Server,profile_access,user_b,102,user_a,http://localhost:5000/user/profile?id=102,200,66,0,0.5,normal,2025-11-10T16:47:06.267668

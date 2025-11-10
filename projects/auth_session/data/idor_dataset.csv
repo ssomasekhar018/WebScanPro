@@ -1,0 +1,9 @@
+request_id,endpoint,method,parameter,user_id,target_id,status_code,response_length,sensitive_data_found,is_unauthorized
+1,/user/profile,GET,id=101,user_a,101,200,66,True,0
+2,/user/profile,GET,id=102,user_a,102,200,66,True,0
+3,/user/profile,GET,id=201,user_a,201,200,66,True,1
+4,/user/profile,GET,id=202,user_a,202,200,66,True,1
+5,/user/profile,GET,id=201,user_b,201,200,66,True,0
+6,/user/profile,GET,id=202,user_b,202,200,66,True,0
+7,/user/profile,GET,id=101,user_b,101,200,66,True,1
+8,/user/profile,GET,id=102,user_b,102,200,66,True,1

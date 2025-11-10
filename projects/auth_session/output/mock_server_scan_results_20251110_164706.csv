@@ -1,0 +1,9 @@
+application,test_type,user_id,target_id,original_user,url,status_code,response_length,ml_prediction,ml_probability,ml_label,timestamp
+Mock_Server,profile_access,user_a,101,user_a,http://localhost:5000/user/profile?id=101,200,66,0,0.5,normal,2025-11-10T16:46:48.350050
+Mock_Server,profile_access,user_a,102,user_a,http://localhost:5000/user/profile?id=102,200,66,0,0.5,normal,2025-11-10T16:46:50.912315
+Mock_Server,profile_access,user_a,201,user_b,http://localhost:5000/user/profile?id=201,200,66,0,0.5,normal,2025-11-10T16:46:53.465611
+Mock_Server,profile_access,user_a,202,user_b,http://localhost:5000/user/profile?id=202,200,66,0,0.5,normal,2025-11-10T16:46:56.013722
+Mock_Server,profile_access,user_b,201,user_b,http://localhost:5000/user/profile?id=201,200,66,0,0.5,normal,2025-11-10T16:46:58.570381
+Mock_Server,profile_access,user_b,202,user_b,http://localhost:5000/user/profile?id=202,200,66,0,0.5,normal,2025-11-10T16:47:01.139585
+Mock_Server,profile_access,user_b,101,user_a,http://localhost:5000/user/profile?id=101,200,66,0,0.5,normal,2025-11-10T16:47:03.720101
+Mock_Server,profile_access,user_b,102,user_a,http://localhost:5000/user/profile?id=102,200,66,0,0.5,normal,2025-11-10T16:47:06.267668

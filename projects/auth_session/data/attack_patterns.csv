@@ -1,0 +1,11 @@
+scenario_id,description,attack_type,target_username,num_attempts,ip_source,time_window_minutes,expected_outcome
+1,Normal successful login,Normal,user_normal,1,single_ip,1,success
+2,Normal failed login,Normal,user_normal,1,single_ip,1,failure
+3,Rapid brute-force on a single user,Brute-Force,admin,50,single_ip,5,failure_and_lockout
+4,Slow brute-force on a single user,Brute-Force,support_user,100,single_ip,60,failure
+5,Distributed credential stuffing,Credential Stuffing,N/A,200,multiple_ips,10,multiple_failures
+6,Targeted credential stuffing on a high-value account,Credential Stuffing,ceo_user,50,multiple_ips,15,failure
+7,Account takeover attempt (multiple failures then success),ATO,user_vip,10,single_ip,5,failure_then_success
+8,Session hijacking/reuse,Session Abuse,user_authenticated,1,new_ip,1,success_with_anomaly
+9,Rate limit triggering,Brute-Force,N/A,150,single_ip,2,http_429
+10,Impossible travel,ATO,user_traveler,2,multiple_locations,10,success_with_anomaly

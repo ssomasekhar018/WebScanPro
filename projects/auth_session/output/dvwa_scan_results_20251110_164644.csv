@@ -1,0 +1,5 @@
+application,test_type,user_id,target_id,original_user,url,status_code,response_length,ml_prediction,ml_probability,ml_label,timestamp
+DVWA,profile_access,admin,1,admin,http://localhost/vulnerabilities/brute/?user_id=1,200,1523,0,0.5,normal,2025-11-10T16:46:41.934001
+DVWA,profile_access,admin,2,admin,http://localhost/vulnerabilities/brute/?user_id=2,200,1523,0,0.5,normal,2025-11-10T16:46:42.463740
+DVWA,profile_access,admin,1,user,http://localhost/vulnerabilities/brute/?user_id=1,200,1523,0,0.5,normal,2025-11-10T16:46:42.992356
+DVWA,profile_access,admin,2,user,http://localhost/vulnerabilities/brute/?user_id=2,200,1523,0,0.5,normal,2025-11-10T16:46:43.519803

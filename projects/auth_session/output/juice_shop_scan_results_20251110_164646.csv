@@ -1,0 +1,5 @@
+application,test_type,user_id,target_id,original_user,url,status_code,response_length,ml_prediction,ml_probability,ml_label,timestamp
+Juice_Shop,api_user_access,demo@demo.com,1,demo@demo.com,http://localhost:3000/rest/user/1,500,3033,0,0.5,normal,2025-11-10T16:46:44.105114
+Juice_Shop,api_user_access,demo@demo.com,2,demo@demo.com,http://localhost:3000/rest/user/2,500,3033,0,0.5,normal,2025-11-10T16:46:44.673703
+Juice_Shop,api_user_access,demo@demo.com,1,admin@juice-sh.op,http://localhost:3000/rest/user/1,500,3033,0,0.5,normal,2025-11-10T16:46:45.235026
+Juice_Shop,api_user_access,demo@demo.com,2,admin@juice-sh.op,http://localhost:3000/rest/user/2,500,3033,0,0.5,normal,2025-11-10T16:46:45.774267

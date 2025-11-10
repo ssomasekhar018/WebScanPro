@@ -1,0 +1,6 @@
+,,ml_prediction,ml_prediction,ml_prediction,ml_probability,response_length
+,,count,sum,mean,mean,mean
+application,test_type,,,,,
+DVWA,profile_access,8,0,0.0,0.5,1523.0
+Juice_Shop,api_user_access,8,0,0.0,0.5,3033.0
+Mock_Server,profile_access,16,0,0.0,0.5,66.0
