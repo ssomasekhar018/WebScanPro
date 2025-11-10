@@ -1,1 +1,0 @@
-{"embedding_dim": 128, "hidden_dim": 128, "num_filters": null, "filter_sizes": null, "num_layers": 2, "dropout": 0.3, "num_features": 7}

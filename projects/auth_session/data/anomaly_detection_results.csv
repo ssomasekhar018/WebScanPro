@@ -1,9 +1,0 @@
-input_length,num_special_chars,num_digits,contains_sql_keyword,contains_html_tag,url_encoded,parameter_encoded,param_type_encoded,anomaly_iforest,anomaly_ocsvm
-0.0,0.0,0.0,0,0,0,3,3,0,1
-0.0,0.0,0.0,0,0,0,1,1,0,0
-0.0689655172413793,0.0,0.0,0,0,0,0,2,0,1
-1.0,0.0,0.9090909090909092,0,0,0,2,0,0,0
-0.0,0.0,0.0,0,0,0,3,3,0,1
-0.0,0.0,0.0,0,0,0,1,1,0,0
-0.0689655172413793,0.0,0.0,0,0,0,0,2,0,1
-1.0,0.0,1.0,0,0,0,2,0,1,0

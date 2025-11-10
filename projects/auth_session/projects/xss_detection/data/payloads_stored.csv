@@ -1,5 +1,0 @@
-payload_id,payload,context_hint,expected_behavior
-S001,"<script>alert(1)</script>","mtxMessage","stored and executed"
-S002,"<img src=x onerror=alert(1)>","mtxMessage","event on load"
-B101,"Great!","mtxMessage","safe comment"
-B102,"Thanks","mtxMessage","safe"
