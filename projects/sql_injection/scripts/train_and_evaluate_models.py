@@ -1,20 +1,34 @@
-# projects/sql_injection/scripts/train_and_evaluate_models.py
+import sys
+from pathlib import Path
+
+# Add project root to the Python path
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.append(str(ROOT))
+
 import joblib
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, roc_auc_score
-from pathlib import Path
 
 from projects.sql_injection.scripts.feature_engineering import extract_features, get_preprocessor
-from projects.sql_injection.scanner.config import DATASET_CSV   # will be created later
+from projects.sql_injection.scripts.config import DATASET_CSV   # will be created later
 
-ROOT = Path(__file__).resolve().parents[2]
-MODEL_DIR = ROOT / "models"
+MODEL_DIR = ROOT / "projects" / "sql_injection" / "models"
 MODEL_DIR.mkdir(exist_ok=True)
 
 def main():
     df = pd.read_csv(DATASET_CSV)
+
+    # Prepare data for feature extraction
+    df = df.rename(columns={
+        "input_value": "payload",
+        "html_content_length": "html_len",
+        "error_message_flag": "error_flag",
+    })
+    df["is_malicious"] = (df["label"] == "injection").astype(int)
+    df["reflected_flag"] = 0  # Placeholder
+
     X_raw = extract_features(df)
     y = df["is_malicious"]
 
