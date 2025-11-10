@@ -1,0 +1,29 @@
+{
+    "summary": {
+        "total_urls": 1,
+        "xss_detected": 0,
+        "sqli_detected": 0,
+        "high_risk_urls": 0,
+        "medium_risk_urls": 0,
+        "low_risk_urls": 1,
+        "timestamp": "2025-11-10T16:27:43.398442"
+    },
+    "results": [
+        {
+            "url": "http://127.0.0.1",
+            "timestamp": "2025-11-10T16:27:41.908593",
+            "xss": {
+                "is_vulnerable": false,
+                "probability": 0.0,
+                "payloads_tested": 20,
+                "vulnerable_payloads": []
+            },
+            "sqli": {
+                "is_vulnerable": false,
+                "probability": 0.0,
+                "payloads_tested": 25,
+                "vulnerable_payloads": []
+            }
+        }
+    ]
+}

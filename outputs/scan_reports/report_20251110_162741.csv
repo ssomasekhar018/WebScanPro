@@ -1,0 +1,2 @@
+url,xss_vulnerable,xss_probability,sqli_vulnerable,sqli_probability,risk_level
+http://127.0.0.1,False,0.0,False,0.0,Low

@@ -12,14 +12,14 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(BASE_DIR))
 
 # Model paths
 MODEL_PATHS = {
-    "xss": os.path.join(PROJECT_ROOT, "projects", "xss_detection", "models", "best_model_20251025.pt"),
-    "sqli": os.path.join(PROJECT_ROOT, "projects", "sql_injection", "models", "best_model_20251022.pkl")
+    "xss": os.path.join(PROJECT_ROOT, "projects", "xss_detection", "models", "best_model_20251029_132159.pt"),
+    "sqli": os.path.join(PROJECT_ROOT, "projects", "sql_injection", "models", "best_model.pkl")
 }
 
 # Tokenizer/vectorizer paths
 TOKENIZER_PATHS = {
-    "xss": os.path.join(PROJECT_ROOT, "projects", "xss_detection", "models", "tokenizer.json"),
-    "sqli": os.path.join(PROJECT_ROOT, "projects", "sql_injection", "models", "vectorizer.pkl")
+    "xss": os.path.join(PROJECT_ROOT, "projects", "xss_detection", "models", "best_model_20251029_132159_tokenizer.json"),
+    "sqli": os.path.join(PROJECT_ROOT, "projects", "sql_injection", "models", "preprocessor.pkl")
 }
 
 # Classification thresholds

@@ -1,0 +1,5 @@
+param_key_count,self_access,param_change_rate,status_code_cat,response_length,sensitive_data_found
+1,0,1.0,0,66,True
+1,0,1.0,0,66,True
+1,0,1.0,0,66,True
+1,0,1.0,0,66,True
