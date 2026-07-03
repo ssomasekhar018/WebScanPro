@@ -1,5 +1,127 @@
-# .gitignore
-.ipynb_checkpoints/
+# ─────────────────────────────────────────────────────────────────────────────
+# WebScan Pro — .gitignore
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Python ────────────────────────────────────────────────────────────────────
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.pyw
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+build/
+*.egg
+.Python
+
+# ── Secrets — NEVER commit ────────────────────────────────────────────────────
+.env
+*.key
+*.pem
+*.crt
+*.secret
+
+# ── Log files ─────────────────────────────────────────────────────────────────
 *.log
+logs/
+outputs/logs/
+projects/logs/
+projects/*/logs/
+projects/auth_session/logs/
+projects/xss_detection/logs/
+scanner_output.log
+model_train_eval_*.log
+
+# ── Scan outputs & reports (runtime-generated) ────────────────────────────────
+outputs/
+projects/*/output/
+projects/webscanprod/reports/
+
+# ── PDFs (generated reports — not source files) ───────────────────────────────
+*.pdf
+
+# ── Images & visualization plots (generated) ─────────────────────────────────
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+*.ico
+outputs/visualization_plots/
+outputs/reports/*.png
+projects/auth_session/docs/*.png
+projects/webscanprod/assets/images/
+
+# ── HTML snapshots (captured pages, not source templates) ────────────────────
+page.html
+*.snap
+*.snapshot
+snapshots/
+projects/webscanprod/reports/html/
+projects/xss_detection/logs/snapshots/
+# Captured/generated HTML files (scanner output — not Jinja templates)
+*.html
+!projects/webscanprod/templates/*.html
+
+# ── ML model artifacts (large binaries) ──────────────────────────────────────
+# These should be tracked with Git LFS if version control is needed.
+*.h5
+*.pt
+*.pkl
+*.joblib
+*.onnx
+*.pb
+*.tflite
+
+# ── HuggingFace / FAISS / vector stores ──────────────────────────────────────
+.cache/
+vectorstore/
+projects/auth_session/ml/rag/vectorstore/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── OS artifacts ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# ── IDE / Editor ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
+*.swp
+*.swo
+*~
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+.dockerignore
+
+# ── Temporary / scratch ───────────────────────────────────────────────────────
+*.tmp
+*.temp
+*.bak
+*.orig
+temp/
+tmp/
+
+# ── Cloud Deployment — Model File Exceptions ──────────────────────────────────
+# These small model files (<10 MB total) are allowed for Streamlit Cloud / HF Spaces.
+# Without them the app falls back to rule-based mode automatically.
+!projects/auth_session/ml/idor_model.joblib
+!projects/auth_session/ml/random_forest_idor.joblib
+!projects/auth_session/ml/isolation_forest_model.pkl
+!projects/auth_session/ml/preprocessing_pipeline.pkl
+!projects/sql_injection/models/best_model.pkl
+!projects/sql_injection/models/preprocessor.pkl
+!projects/xss_detection/models/best_model_20251029_132159.pt
+!projects/xss_detection/models/best_model_20251029_132159_tokenizer.json
+!projects/auth_session/ml/rag/vectorstore/index.pkl
+!projects/auth_session/ml/rag/vectorstore/index.faiss
+
