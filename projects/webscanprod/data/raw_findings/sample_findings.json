@@ -1,0 +1,38 @@
+[
+  {
+    "vuln_id": "VULN-001",
+    "vuln_name": "SQL Injection",
+    "severity": "Critical",
+    "affected_url": "/login",
+    "description": "Unsanitized input in SQL query allows injection.",
+    "impact": "Account compromise, data exfiltration",
+    "recommendation": "Use parameterized queries and input validation."
+  },
+  {
+    "vuln_id": "VULN-002",
+    "vuln_name": "XSS",
+    "severity": "High",
+    "affected_url": "/comments",
+    "description": "Reflected XSS via unescaped user input.",
+    "impact": "Session hijacking, phishing",
+    "recommendation": "Escape output and implement CSP."
+  },
+  {
+    "vuln_id": "VULN-003",
+    "vuln_name": "Open Redirect",
+    "severity": "Medium",
+    "affected_url": "/redirect",
+    "description": "Unvalidated redirect parameter.",
+    "impact": "Phishing, user redirection to malicious sites",
+    "recommendation": "Validate redirect targets against an allowlist."
+  },
+  {
+    "vuln_id": "VULN-004",
+    "vuln_name": "Server Banner Disclosure",
+    "severity": "Low",
+    "affected_url": "/status",
+    "description": "Server header reveals software and version.",
+    "impact": "Information disclosure aiding targeted attacks",
+    "recommendation": "Hide server banner and minimize information in headers."
+  }
+]

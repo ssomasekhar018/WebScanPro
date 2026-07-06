@@ -1,0 +1,9 @@
+pandas
+reportlab
+python-docx
+numpy
+matplotlib
+seaborn
+plotly
+jinja2
+kaleido

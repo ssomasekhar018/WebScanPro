@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ project_name }} — Vulnerability Report</title>
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>{{ project_name }}</h1>
+    <p>Date: {{ date }}</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Summary</h2>
+      <ul>
+        <li>Total findings: {{ total }}</li>
+        <li>Critical: {{ counts.get('Critical', 0) }}</li>
+        <li>High: {{ counts.get('High', 0) }}</li>
+        <li>Medium: {{ counts.get('Medium', 0) }}</li>
+        <li>Low: {{ counts.get('Low', 0) }}</li>
+        <li>Info: {{ counts.get('Info', 0) }}</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Charts</h2>
+      {{ plotly_div | safe }}
+    </section>
+
+    <section>
+      <h2>Static Images</h2>
+      <img src="{{ img_path }}" alt="severity counts" />
+    </section>
+
+    <section>
+      <h2>Findings</h2>
+      <table>
+        <thead><tr><th>ID</th><th>Name</th><th>Severity</th><th>URL</th></tr></thead>
+        <tbody>
+        {% for row in findings %}
+          <tr>
+            <td>{{ row.vuln_id }}</td>
+            <td>{{ row.vuln_name }}</td>
+            <td>{{ row.severity }}</td>
+            <td>{{ row.affected_url }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

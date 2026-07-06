@@ -1,0 +1,5 @@
+vuln_id,vuln_name,description,severity,affected_url,impact,recommendation
+VULN-001,SQL Injection,Unsanitized input in SQL query allows injection.,Critical,/login,"Account compromise, data exfiltration",Use parameterized queries and input validation.
+VULN-002,XSS,Reflected XSS via unescaped user input.,High,/comments,"Session hijacking, phishing",Escape output and implement CSP.
+VULN-003,Open Redirect,Unvalidated redirect parameter.,Medium,/redirect,"Phishing, user redirection to malicious sites",Validate redirect targets against an allowlist.
+VULN-004,Server Banner Disclosure,Server header reveals software and version.,Low,/status,Information disclosure aiding targeted attacks,Hide server banner and minimize information in headers.
