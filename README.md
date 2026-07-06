@@ -1,3 +1,12 @@
+---
+title: WebScanPro
+emoji: 🛡️
+colorFrom: blue
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
 <div align="center">
 
 # 🛡️ WebScan Pro
