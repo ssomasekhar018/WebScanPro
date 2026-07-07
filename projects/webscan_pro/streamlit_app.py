@@ -48,65 +48,38 @@ st.markdown("""
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
+  /* Typography */
   html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
-  .stApp { background-color: var(--background-color); color: var(--text-color); }
-
-  section[data-testid="stSidebar"] > div {
-    background: var(--secondary-background-color);
-    border-right: 1px solid rgba(128,128,128,0.2);
-  }
-
-  .stButton > button {
-    background: var(--primary-color);
-    color: white; border: none; border-radius: 8px;
-    font-weight: 600; letter-spacing: 0.3px;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-  .stButton > button:hover {
-    filter: brightness(1.1);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    transform: translateY(-1px);
-  }
-
-  .stTextInput > div > div > input {
-    background-color: var(--secondary-background-color); color: var(--text-color);
-    border: 1px solid rgba(128,128,128,0.2); border-radius: 8px;
-    font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
-  }
-  .stTextInput > div > div > input:focus {
-    border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(88,166,255,0.1);
-  }
-
-  h1, h2, h3 { color: var(--text-color) !important; }
+  h1, h2, h3 { color: var(--text-color) !important; font-family: 'Inter', sans-serif; }
   h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
 
+  /* Custom Metric Cards */
   .metric-card {
     background: var(--secondary-background-color);
-    border: 1px solid rgba(128,128,128,0.2); padding: 20px;
-    border-radius: 12px; text-align: center;
-    transition: border-color 0.2s;
+    border: 1px solid rgba(128,128,128,0.2); 
+    padding: 20px;
+    border-radius: 12px; 
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   }
-  .metric-card:hover { border-color: var(--primary-color); }
-  .metric-value { font-size: 2.2rem; font-weight: 700; color: var(--text-color); }
-  .metric-label { font-size: 0.8rem; color: rgba(128,128,128,0.8); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
-
-  .stTabs [data-baseweb="tab-list"] { gap: 8px; background: transparent; }
-  .stTabs [data-baseweb="tab"] {
-    background: var(--secondary-background-color); border: 1px solid rgba(128,128,128,0.2); border-radius: 8px;
-    color: var(--text-color); padding: 8px 18px; font-weight: 500;
+  .metric-card:hover { 
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
   }
-  .stTabs [aria-selected="true"] { background: var(--secondary-background-color); color: var(--primary-color); border-color: var(--primary-color); }
-
-  .stProgress > div > div { background: var(--primary-color); border-radius: 4px; }
-
-  .streamlit-expanderHeader {
-    background: var(--secondary-background-color) !important; border: 1px solid rgba(128,128,128,0.2) !important;
-    border-radius: 8px !important; color: var(--text-color) !important;
+  .metric-value { 
+    font-size: 2.2rem; 
+    font-weight: 700; 
+    color: var(--text-color); 
   }
-  .streamlit-expanderContent {
-    background: var(--background-color) !important; border: 1px solid rgba(128,128,128,0.2) !important;
-    border-top: none !important;
+  .metric-label { 
+    font-size: 0.8rem; 
+    color: var(--text-color);
+    opacity: 0.7;
+    text-transform: uppercase; 
+    letter-spacing: 0.5px; 
+    margin-top: 4px; 
   }
 </style>
 """, unsafe_allow_html=True)
