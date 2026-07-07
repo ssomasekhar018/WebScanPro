@@ -580,111 +580,117 @@ if page == "🏠 Dashboard":
                 },
             }
             st.session_state.history.insert(0, record)
+            st.session_state.current_scan = record
 
-            # Summary metrics
-            st.divider()
-            st.markdown(f"### 📊 Results for `{url}`")
+    if st.session_state.get("current_scan"):
+        record = st.session_state.current_scan
+        url = record["url"]
+        findings = record["data"]
 
-            critical_n = sum(1 for f in findings if f["severity"] == "Critical")
-            high_n     = sum(1 for f in findings if f["severity"] == "High")
-            medium_n   = sum(1 for f in findings if f["severity"] == "Medium")
-            low_n      = sum(1 for f in findings if f["severity"] == "Low")
+    # Summary metrics
+    st.divider()
+    st.markdown(f"### 📊 Results for `{url}`")
 
-            m1, m2, m3, m4 = st.columns(4)
-            with m1:
-                st.markdown(
-                    f'<div class="metric-card"><div class="metric-value" style="color:#da3633">'
-                    f'{critical_n}</div><div class="metric-label">Critical</div></div>',
-                    unsafe_allow_html=True,
-                )
-            with m2:
-                st.markdown(
-                    f'<div class="metric-card"><div class="metric-value" style="color:#d29922">'
-                    f'{high_n}</div><div class="metric-label">High</div></div>',
-                    unsafe_allow_html=True,
-                )
-            with m3:
-                st.markdown(
-                    f'<div class="metric-card"><div class="metric-value" style="color:#388bfd">'
-                    f'{medium_n}</div><div class="metric-label">Medium</div></div>',
-                    unsafe_allow_html=True,
-                )
-            with m4:
-                st.markdown(
-                    f'<div class="metric-card"><div class="metric-value" style="color:#3fb950">'
-                    f'{len(findings)}</div><div class="metric-label">Total</div></div>',
-                    unsafe_allow_html=True,
-                )
+    critical_n = sum(1 for f in findings if f["severity"] == "Critical")
+    high_n     = sum(1 for f in findings if f["severity"] == "High")
+    medium_n   = sum(1 for f in findings if f["severity"] == "Medium")
+    low_n      = sum(1 for f in findings if f["severity"] == "Low")
 
-            st.markdown("")
+    m1, m2, m3, m4 = st.columns(4)
+    with m1:
+        st.markdown(
+            f'<div class="metric-card"><div class="metric-value" style="color:#da3633">'
+            f'{critical_n}</div><div class="metric-label">Critical</div></div>',
+            unsafe_allow_html=True,
+        )
+    with m2:
+        st.markdown(
+            f'<div class="metric-card"><div class="metric-value" style="color:#d29922">'
+            f'{high_n}</div><div class="metric-label">High</div></div>',
+            unsafe_allow_html=True,
+        )
+    with m3:
+        st.markdown(
+            f'<div class="metric-card"><div class="metric-value" style="color:#388bfd">'
+            f'{medium_n}</div><div class="metric-label">Medium</div></div>',
+            unsafe_allow_html=True,
+        )
+    with m4:
+        st.markdown(
+            f'<div class="metric-card"><div class="metric-value" style="color:#3fb950">'
+            f'{len(findings)}</div><div class="metric-label">Total</div></div>',
+            unsafe_allow_html=True,
+        )
 
-            if not findings:
-                st.success("✅ No vulnerabilities detected! The target appears clean for the selected scan types.")
-            else:
-                # Tabs by type
-                types_found = list(dict.fromkeys(f["type"] for f in findings))
-                tabs = st.tabs(["🔍 All Findings"] + [f"⚠️ {t}" for t in types_found])
+    st.markdown("")
 
-                with tabs[0]:
-                    sorted_f = sorted(findings, key=lambda f: severity_to_int(f["severity"]), reverse=True)
-                    for i, f in enumerate(sorted_f):
-                        render_finding_card(f, i)
+    if not findings:
+        st.success("✅ No vulnerabilities detected! The target appears clean for the selected scan types.")
+    else:
+        # Tabs by type
+        types_found = list(dict.fromkeys(f["type"] for f in findings))
+        tabs = st.tabs(["🔍 All Findings"] + [f"⚠️ {t}" for t in types_found])
 
-                for ti, t in enumerate(types_found):
-                    with tabs[ti + 1]:
-                        for i, f in enumerate([x for x in findings if x["type"] == t]):
-                            render_finding_card(f, i)
+        with tabs[0]:
+            sorted_f = sorted(findings, key=lambda f: severity_to_int(f["severity"]), reverse=True)
+            for i, f in enumerate(sorted_f):
+                render_finding_card(f, i)
 
-                # Export
-                st.divider()
-                st.markdown("### 📤 Export Report")
-                ec1, ec2 = st.columns(2)
+        for ti, t in enumerate(types_found):
+            with tabs[ti + 1]:
+                for i, f in enumerate([x for x in findings if x["type"] == t]):
+                    render_finding_card(f, i)
 
-                report_data = {
-                    "scan_meta": {
-                        "url":       url,
-                        "timestamp": record["date"],
-                        "config":    record["config"],
-                    },
-                    "summary": {
-                        "total":    len(findings),
-                        "critical": critical_n,
-                        "high":     high_n,
-                        "medium":   medium_n,
-                        "low":      low_n,
-                    },
-                    "findings": [
-                        {k: v for k, v in f.items() if k not in ("details",)}
-                        for f in findings
-                    ],
+        # Export
+        st.divider()
+        st.markdown("### 📤 Export Report")
+        ec1, ec2 = st.columns(2)
+
+        report_data = {
+            "scan_meta": {
+                "url":       url,
+                "timestamp": record["date"],
+                "config":    record["config"],
+            },
+            "summary": {
+                "total":    len(findings),
+                "critical": critical_n,
+                "high":     high_n,
+                "medium":   medium_n,
+                "low":      low_n,
+            },
+            "findings": [
+                {k: v for k, v in f.items() if k not in ("details",)}
+                for f in findings
+            ],
+        }
+
+        with ec1:
+            st.download_button(
+                "⬇️ Download JSON Report",
+                data=json.dumps(report_data, indent=2),
+                file_name=f"webscan_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
+                mime="application/json",
+                use_container_width=True,
+            )
+        with ec2:
+            flat = [
+                {
+                    "type":        f["type"],
+                    "severity":    f["severity"],
+                    "confidence":  f["confidence"],
+                    "location":    f["location"],
+                    "description": f["description"],
                 }
-
-                with ec1:
-                    st.download_button(
-                        "⬇️ Download JSON Report",
-                        data=json.dumps(report_data, indent=2),
-                        file_name=f"webscan_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
-                        mime="application/json",
-                        use_container_width=True,
-                    )
-                with ec2:
-                    flat = [
-                        {
-                            "type":        f["type"],
-                            "severity":    f["severity"],
-                            "confidence":  f["confidence"],
-                            "location":    f["location"],
-                            "description": f["description"],
-                        }
-                        for f in findings
-                    ]
-                    st.download_button(
-                        "⬇️ Download CSV Report",
-                        data=pd.DataFrame(flat).to_csv(index=False),
-                        file_name=f"webscan_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                        mime="text/csv",
-                        use_container_width=True,
-                    )
+                for f in findings
+            ]
+            st.download_button(
+                "⬇️ Download CSV Report",
+                data=pd.DataFrame(flat).to_csv(index=False),
+                file_name=f"webscan_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                mime="text/csv",
+                use_container_width=True,
+            )
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
