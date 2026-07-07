@@ -20,6 +20,13 @@ project_root = os.path.abspath(os.path.join(current_dir, "../../"))
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
+# ── Secrets Injection ────────────────────────────────────────────────────────
+try:
+    if "HUGGINGFACEHUB_API_TOKEN" in st.secrets:
+        os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+except Exception:
+    pass
+
 # ── Optional imports (graceful degradation) ──────────────────────────────────
 RAG_AVAILABLE = False
 try:

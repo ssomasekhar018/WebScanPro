@@ -90,11 +90,30 @@ def generate_augmented_report(query):
             "sources": [doc.metadata for doc in result['context']]  # For traceability
         }
     except Exception as e:
-        return {
-            "error": str(e),
-            "generated_report": f"Failed to generate report: {str(e)}",
-            "sources": []
-        }
+        error_repr = repr(e)
+        error_str = str(e) if str(e) else error_repr
+        
+        # Fallback to local Vectorstore (no LLM API required)
+        try:
+            embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+            vectorstore = FAISS.load_local(VECTORSTORE_PATH, embeddings, allow_dangerous_deserialization=True)
+            docs = vectorstore.similarity_search(query, k=3)
+            
+            fallback_text = "⚠️ **AI Generation Unavailable** — *Displaying relevant documentation from local knowledge base instead.*\n\n---\n\n"
+            for i, doc in enumerate(docs):
+                fallback_text += f"**Source {i+1}**: `{doc.metadata.get('source', 'Security Documentation')}`\n\n> {doc.page_content.replace(chr(10), chr(10)+'> ')}\n\n"
+                
+            return {
+                "generated_report": fallback_text,
+                "sources": [doc.metadata for doc in docs],
+                "error": error_str
+            }
+        except Exception as fallback_e:
+            return {
+                "error": error_str,
+                "generated_report": f"Failed to generate report: {error_str}\n\nFallback also failed: {repr(fallback_e)}",
+                "sources": []
+            }
 
 if __name__ == "__main__":
     # Simple test if run directly
