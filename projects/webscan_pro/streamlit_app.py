@@ -49,63 +49,63 @@ st.markdown("""
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
   html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
-  .stApp { background-color: #0d1117; color: #c9d1d9; }
+  .stApp { background-color: var(--background-color); color: var(--text-color); }
 
   section[data-testid="stSidebar"] > div {
-    background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
-    border-right: 1px solid #30363d;
+    background: var(--secondary-background-color);
+    border-right: 1px solid rgba(128,128,128,0.2);
   }
 
   .stButton > button {
-    background: linear-gradient(135deg, #238636, #2ea043);
-    color: #fff; border: none; border-radius: 8px;
+    background: var(--primary-color);
+    color: white; border: none; border-radius: 8px;
     font-weight: 600; letter-spacing: 0.3px;
     transition: all 0.2s ease;
-    box-shadow: 0 2px 8px rgba(35,134,54,0.3);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
   .stButton > button:hover {
-    background: linear-gradient(135deg, #2ea043, #3fb950);
-    box-shadow: 0 4px 16px rgba(35,134,54,0.5);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
     transform: translateY(-1px);
   }
 
   .stTextInput > div > div > input {
-    background-color: #161b22; color: #c9d1d9;
-    border: 1px solid #30363d; border-radius: 8px;
+    background-color: var(--secondary-background-color); color: var(--text-color);
+    border: 1px solid rgba(128,128,128,0.2); border-radius: 8px;
     font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
   }
   .stTextInput > div > div > input:focus {
-    border-color: #58a6ff; box-shadow: 0 0 0 3px rgba(88,166,255,0.1);
+    border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(88,166,255,0.1);
   }
 
-  h1, h2, h3 { color: #f0f6fc !important; }
+  h1, h2, h3 { color: var(--text-color) !important; }
   h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
 
   .metric-card {
-    background: linear-gradient(135deg, #161b22, #1c2128);
-    border: 1px solid #30363d; padding: 20px;
+    background: var(--secondary-background-color);
+    border: 1px solid rgba(128,128,128,0.2); padding: 20px;
     border-radius: 12px; text-align: center;
     transition: border-color 0.2s;
   }
-  .metric-card:hover { border-color: #58a6ff; }
-  .metric-value { font-size: 2.2rem; font-weight: 700; color: #f0f6fc; }
-  .metric-label { font-size: 0.8rem; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+  .metric-card:hover { border-color: var(--primary-color); }
+  .metric-value { font-size: 2.2rem; font-weight: 700; color: var(--text-color); }
+  .metric-label { font-size: 0.8rem; color: rgba(128,128,128,0.8); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
 
   .stTabs [data-baseweb="tab-list"] { gap: 8px; background: transparent; }
   .stTabs [data-baseweb="tab"] {
-    background: #161b22; border: 1px solid #30363d; border-radius: 8px;
-    color: #8b949e; padding: 8px 18px; font-weight: 500;
+    background: var(--secondary-background-color); border: 1px solid rgba(128,128,128,0.2); border-radius: 8px;
+    color: var(--text-color); padding: 8px 18px; font-weight: 500;
   }
-  .stTabs [aria-selected="true"] { background: #21262d; color: #58a6ff; border-color: #58a6ff; }
+  .stTabs [aria-selected="true"] { background: var(--secondary-background-color); color: var(--primary-color); border-color: var(--primary-color); }
 
-  .stProgress > div > div { background: linear-gradient(90deg, #238636, #58a6ff); border-radius: 4px; }
+  .stProgress > div > div { background: var(--primary-color); border-radius: 4px; }
 
   .streamlit-expanderHeader {
-    background: #161b22 !important; border: 1px solid #30363d !important;
-    border-radius: 8px !important; color: #c9d1d9 !important;
+    background: var(--secondary-background-color) !important; border: 1px solid rgba(128,128,128,0.2) !important;
+    border-radius: 8px !important; color: var(--text-color) !important;
   }
   .streamlit-expanderContent {
-    background: #0d1117 !important; border: 1px solid #30363d !important;
+    background: var(--background-color) !important; border: 1px solid rgba(128,128,128,0.2) !important;
     border-top: none !important;
   }
 </style>
@@ -479,7 +479,7 @@ def render_finding_card(finding: dict, idx: int):
                 f"""<div style="background:{color}22;border:1px solid {color};border-radius:10px;
                     padding:14px;text-align:center;margin-top:8px;">
                     <div style="color:{color};font-size:1.6rem;font-weight:700;">{conf}%</div>
-                    <div style="color:#8b949e;font-size:0.7rem;margin-top:4px;text-transform:uppercase;letter-spacing:0.5px;">
+                    <div style="color:var(--text-color);font-size:0.7rem;margin-top:4px;text-transform:uppercase;letter-spacing:0.5px;opacity:0.7;">
                     Confidence</div></div>""",
                 unsafe_allow_html=True,
             )
@@ -812,11 +812,11 @@ It combines machine learning, rule-based heuristics, and Retrieval-Augmented Gen
         """)
     with col_b:
         st.markdown("""
-<div style="background:#161b22;border:1px solid #30363d;border-radius:14px;padding:28px;text-align:center;">
+<div style="background:var(--secondary-background-color);border:1px solid rgba(128,128,128,0.2);border-radius:14px;padding:28px;text-align:center;">
   <div style="font-size:3.5rem">🛡️</div>
-  <div style="font-size:1.2rem;font-weight:700;color:#f0f6fc;margin-top:10px">WebScan Pro</div>
-  <div style="color:#8b949e;font-size:0.78rem;margin-top:6px">v1.0 · Infosys Springboard 6.0</div>
-  <hr style="border-color:#30363d;margin:18px 0">
+  <div style="font-size:1.2rem;font-weight:700;color:var(--text-color);margin-top:10px">WebScan Pro</div>
+  <div style="color:var(--text-color);opacity:0.7;font-size:0.78rem;margin-top:6px">v1.0 · Infosys Springboard 6.0</div>
+  <hr style="border-color:rgba(128,128,128,0.2);margin:18px 0">
   <div style="color:#3fb950;font-size:0.85rem;text-align:left;line-height:1.9">
     ✅ XSS Detection<br>
     ✅ SQL Injection<br>
